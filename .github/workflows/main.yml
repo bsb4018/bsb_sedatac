@@ -19,8 +19,27 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Lint code
-        run: echo "Linting completed"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Lint with flake8
+        run: |
+          pip install flake8
+          flake8 .
+        continue-on-error: true
+
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          pip install pytest-cov
+          pytest datasrc/tests/tests.py
 
       - name: Reformat Code
         run: echo "Reformat code completed"
@@ -89,8 +108,8 @@ jobs:
           -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
           -e AWS_BUCKET_HEADER_URL=${{ secrets.AWS_BUCKET_HEADER_URL }} \
           -e AWS_BUCKET_NAME=${{ secrets.AWS_BUCKET_NAME }} \
-          -e DATABASE_NAME=${{ secrets.DATABASE_NAME }} \
-          -e ATLAS_CLUSTER_USERNAME=${{ secrets.MONGO_CLUSTER_USERNAME }} \
-          -e ATLAS_CLUSTER_PASSWORD=${{ secrets.MONGO_CLUSTER_PASSWORD }} \
+          -e DATABASE_NAME=${{ secrets.MONGO_DATABASE_NAME }} \
+          -e ATLAS_CLUSTER_USERNAME=${{ secrets.MONGO_ATLAS_CLUSTER_USERNAME }} \
+          -e ATLAS_CLUSTER_PASSWORD=${{ secrets.MONGO_ATLAS_CLUSTER_PASSWORD }} \
           -p 8080:8080 ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:DataCollection
 

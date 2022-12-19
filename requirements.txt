@@ -11,4 +11,7 @@ pillow==9.2.0
 dnspython
 pymongo==4.2.0
 typing==3.7.4.3
+pytest
+tox
+flake8
 -e.
