@@ -133,3 +133,5 @@ dmypy.json
 
 #custom
 scripts/
+docs_and_images/
+notebooks/
