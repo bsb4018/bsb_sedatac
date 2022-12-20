@@ -135,3 +135,4 @@ dmypy.json
 scripts/
 docs_and_images/
 notebooks/
+data/
