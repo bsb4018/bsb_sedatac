@@ -9,7 +9,24 @@ class DataStore:
         self.root = os.path.join(os.getcwd(), "data")
         self.zip = os.path.join(self.root, "archive.zip")
         self.images = os.path.join(self.root, "images-101")
-        self.list_unwanted = ["BACKGROUND_Google"]
+        #self.list_unwanted = ["BACKGROUND_Google"]
+        self.list_unwanted = ['accordion', 'anchor', 'ant', 'BACKGROUND_Google', 'barrel', 'bass', 'beaver', 'binocular', \
+                              'bonsai', 'brain', 'brontosaurus', 'buddha', 'butterfly', 'camera', 'cannon', 'car_side', \
+                                 'ceiling_fan', 'cellphone', 'chair', 'chandelier', 'cougar_body', 'cougar_face', 'crab', \
+                                    'crayfish', 'crocodile', 'crocodile_head', 'cup', 'dalmatian', 'dollar_bill', 'dolphin',\
+                                          'dragonfly', 'electric_guitar', 'elephant', 'emu', 'euphonium', 'ewer', 'Faces', \
+                                            'Faces_easy', 'ferry', 'flamingo', 'flamingo_head', 'garfield', 'gerenuk', \
+                                                'gramophone', 'grand_piano', 'hawksbill', 'headphone', 'hedgehog', 'helicopter', \
+                                                    'ibis', 'inline_skate', 'joshua_tree', 'kangaroo', 'ketch', 'lamp', 'laptop',\
+                                                          'Leopards', 'llama', 'lobster', 'lotus', 'mandolin', 'mayfly', 'menorah',\
+                                                              'metronome', 'minaret', 'nautilus', 'octopus', 'okapi', 'pagoda', 'panda',\
+                                                                  'pigeon', 'pizza', 'platypus', 'pyramid', 'revolver', 'rhino', \
+                                                                    'rooster', 'saxophone', 'schooner', 'scissors', 'scorpion', \
+                                                                        'sea_horse', 'snoopy', 'soccer_ball', 'stapler', 'starfish',\
+                                                                              'stegosaurus', 'stop_sign', 'strawberry', 'sunflower', \
+                                                                                'tick', 'trilobite', 'umbrella', 'watch', 'water_lilly',\
+                                                                                      'wheelchair', 'wild_cat', 'windsor_chair', 'wrench',\
+                                                                                          'yin_yang']
 
     def prepare_data(self):
         try:
