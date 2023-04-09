@@ -11,7 +11,6 @@ class DataStore:
         self.images = os.path.join(self.root, "images-101")
         self.list_unwanted = ["BACKGROUND_Google"]
         
-
     def prepare_data(self):
         try:
             print(" Extracting Data ")

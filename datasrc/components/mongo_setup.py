@@ -2,8 +2,6 @@ import os
 import sys
 from datasrc.utils.database_handler import MongodbClient
 from datasrc.exception.custom_exception import DataException
-
-
 class MetaDataStore:
     def __init__(self):
         self.root = os.path.join(os.getcwd(), "data")
